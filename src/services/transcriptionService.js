@@ -73,15 +73,14 @@ class TranscriptionService {
     try {
       const transcriptionConfig = {
         audio_url: audioUrl,
+        // Force English language instead of auto-detection
+        language_code: 'en',
         // Optimization settings for voice keyboard use case
         punctuate: true,
         format_text: true,
         disfluencies: false, // Remove "um", "uh", etc.
         dual_channel: false,
         speaker_labels: false,
-        // Language detection
-        language_detection: true,
-        language_confidence_threshold: 0.7,
         // Speed up processing
         boost_param: 'default'
       };
